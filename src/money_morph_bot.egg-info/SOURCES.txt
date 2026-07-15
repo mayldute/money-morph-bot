@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+src/money_morph_bot/__init__.py
+src/money_morph_bot/bot.py
+src/money_morph_bot/config.py
+src/money_morph_bot/constants.py
+src/money_morph_bot/converter.py
+src/money_morph_bot.egg-info/PKG-INFO
+src/money_morph_bot.egg-info/SOURCES.txt
+src/money_morph_bot.egg-info/dependency_links.txt
+src/money_morph_bot.egg-info/entry_points.txt
+src/money_morph_bot.egg-info/requires.txt
+src/money_morph_bot.egg-info/top_level.txt
+tests/test_converter.py

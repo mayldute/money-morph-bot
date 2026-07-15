@@ -1,0 +1,151 @@
+Metadata-Version: 2.4
+Name: money-morph-bot
+Version: 0.1.0
+Summary: A Telegram bot for converting fiat currencies.
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyTelegramBotAPI<5,>=4.26
+Requires-Dist: python-dotenv<2,>=1.0
+Requires-Dist: requests<3,>=2.32
+Provides-Extra: dev
+Requires-Dist: pytest<9,>=8; extra == "dev"
+Requires-Dist: ruff<1,>=0.12; extra == "dev"
+Dynamic: license-file
+
+# MoneyMorphBot
+
+MoneyMorphBot is a Telegram bot that converts fiat.
+The project uses the Frankfurter API to retrieve the latest available
+fiat currency exchange rates. The service does not require an API key.
+
+Exchange rates are generally updated once per working day and should not
+be treated as live trading prices.
+
+This project was created as a small educational project to practice working with external APIs, Telegram bots, and Python error handling.
+
+## Features
+
+- Convert one currency to another using real-time exchange rates.
+- Support for fiat currencies.
+- Display a list of supported currencies.
+- Input validation and user-friendly error messages.
+
+## Technologies
+
+- Python 3
+- pyTelegramBotAPI
+- Requests
+- python-dotenv
+- pytest
+- Frankfurter API
+
+## Requirements
+
+- Python 3.11+
+- Telegram Bot Token (BotFather)
+
+## Local Setup
+
+### Create a Virtual Environment
+
+```bash
+python -m venv .venv
+```
+
+Activate it.
+
+Linux/macOS
+
+```bash
+source .venv/bin/activate
+```
+
+Windows
+
+```powershell
+.venv\Scripts\activate
+```
+
+### Install Dependencies
+
+Install the project together with the development dependencies:
+```sh
+pip install -e ".[dev]"
+```
+
+### Configure the Bot
+
+Before starting the project, configure the necessary environment variables. Create a `.env` file with the following content:
+
+```
+BOT_TOKEN=<your_bot_token>
+```
+
+### Start the Bot
+
+To start the bot, use the command:
+```sh
+money-morph-bot
+```
+
+## How to Use the Bot
+
+- **Start the Bot**: Use the `/start` or `/help` commands to get instructions on how to use the bot.
+- **Convert Currency**: Send a message in the format: `<currency_from> <currency_to> <amount>`. For example, sending `BTC USD 1` will convert 1 Bitcoin (BTC) to USD based on the current exchange rate.
+- **List Available Currencies**: Use the `/values` command to get a list of all supported currencies.
+
+### Example
+
+```
+USD EUR 100
+```
+
+Output
+
+```
+100 USD = 92.13 EUR
+```
+
+## Supported Currencies
+
+- USD
+- EUR
+- GBP
+- PLN
+- BTC
+- ETH
+
+## Running Tests
+
+```bash
+pytest
+```
+
+## Error Handling
+
+The bot validates user input and handles common errors:
+
+- Unsupported currencies
+- Invalid amount
+- Converting the same currency
+- Network errors
+- API errors
+
+## Project Structure
+
+```text
+.
+├── src/
+│   └── money_morph_bot/
+├── tests/
+├── .env.example
+├── .gitignore
+├── README.md
+├── LICENSE
+└── pyproject.toml
+```
+
+## License
+
+This project is licensed under the MIT License.
