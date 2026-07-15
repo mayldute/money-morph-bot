@@ -1,2 +1,0 @@
-[console_scripts]
-money-morph-bot = money_morph_bot.bot:main

@@ -8,6 +8,7 @@ venv/
 # Python
 __pycache__/
 *.py[cod]
+*.egg-info/
 
 # Testing
 .pytest_cache/
